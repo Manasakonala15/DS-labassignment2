@@ -1,0 +1,34 @@
+#include <stdio.h>
+struct Student {
+    char name[50];
+    int age;
+    float total_marks;
+};
+int main() {
+    struct Student students[2]; 
+    float average_marks;
+    for (int i = 0; i < 2; i++) {
+        printf("Enter details for student %d:\n", i + 1);
+        
+         printf("Name: ");
+        scanf("%s", students[i].name);
+        
+        printf("Age: ");
+        scanf("%d", &students[i].age);
+        
+        printf("Total Marks: ");
+        scanf("%f", &students[i].total_marks);
+        
+        printf("\n");
+    }
+    printf("Student Information:\n");
+    for (int i = 0; i < 2; i++) {
+        printf("Student %d:\n", i + 1);
+        printf("Name: %s\n", students[i].name);
+        printf("Age: %d\n", students[i].age);
+        printf("Total Marks: %.2f\n\n", students[i].total_marks);
+    }
+    average_marks = (students[0].total_marks + students[1].total_marks) / 2;
+    printf("Average Total Marks: %.2f\n", average_marks);
+     return 0;
+}
